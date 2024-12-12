@@ -12,31 +12,36 @@ class ContactComponent extends StatelessWidget {
       elevation: 5,
       borderRadius: BorderRadius.circular(8),
       child: Container(
-        height: 350,
+        alignment: Alignment.center,
         padding: const EdgeInsets.all(30),
         decoration: BoxDecoration(
-            color: AppPellet.whiteBackground,
-            borderRadius: BorderRadius.circular(
-              8,
-            )),
+          color: AppPellet.whiteBackground,
+          borderRadius: BorderRadius.circular(8),
+        ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Text(
               'Looking for Safe Rides in South India?',
               style: TextStyle(
-                  fontSize: 15, height: 1.7, color: AppPellet.primaryColor),
+                fontSize: 15,
+                height: 1.7,
+                color: AppPellet.primaryColor,
+              ),
             ),
             20.height,
             const Text(
               'Book Your Cab',
               style: TextStyle(
-                  fontSize: 20, fontWeight: FontWeight.w800, height: 0.9),
+                fontSize: 20,
+                fontWeight: FontWeight.w800,
+                height: 0.9,
+              ),
             ),
             20.height,
             const Text(
-              'Looking for best tourist taxi service in Palakkad? you are at right place, PremierTaxi & Travel Co. take care of all your taxi requirements. We provide : Sedan, Hatchback, SUVs, and Traveller  taxies as per your tour needs.',
+              'Looking for best tourist taxi service in Palakkad? you are at the right place. PremierTaxi & Travel Co. take care of all your taxi requirements. We provide: Sedan, Hatchback, SUVs, and Traveller taxies as per your tour needs.',
               style: TextStyle(fontSize: 14, height: 1.7),
             ),
             20.height,
@@ -44,7 +49,7 @@ class ContactComponent extends StatelessWidget {
               label: 'Request a Call Back',
               width: double.infinity,
               height: 50,
-            )
+            ),
           ],
         ),
       ),

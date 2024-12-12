@@ -3,6 +3,7 @@ import 'package:prime_cabs/configs/components/centered_view.dart';
 import 'package:prime_cabs/configs/extensions/spacer_extension.dart';
 import 'package:prime_cabs/view/components/home/contact_component.dart';
 import 'package:prime_cabs/view/components/home/home_content_component.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class HomeWidget extends StatelessWidget {
   const HomeWidget({super.key});
@@ -17,14 +18,35 @@ class HomeWidget extends StatelessWidget {
         ),
       ),
       child: CenteredView(
-        child: Row(
+          child: ScreenTypeLayout.builder(
+        mobile: (BuildContext context) => Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const HomeContentComponent(),
+            20.height,
+            const ContactComponent()
+          ],
+        ),
+        tablet: (BuildContext context) => Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const HomeContentComponent(),
+            20.height,
+            const ContactComponent()
+          ],
+        ),
+        desktop: (BuildContext context) => Row(
           children: [
             const HomeContentComponent(),
             20.width,
-            const Expanded(child: ContactComponent())
+            Expanded(
+              child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxHeight: 400),
+                  child: const ContactComponent()),
+            )
           ],
         ),
-      ),
+      )),
     );
   }
 }
