@@ -12,7 +12,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveBuilder(
       builder: (context, sizingInformation) => Scaffold(
-        drawer: sizingInformation.deviceScreenType == DeviceScreenType.mobile
+        endDrawer: sizingInformation.deviceScreenType == DeviceScreenType.mobile
             ? const NavigationDrawerWidget()
             : null,
         body: const Column(
